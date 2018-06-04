@@ -13,14 +13,14 @@ namespace TraverseSearch
         {
             var puller = new CarListingPuller(new CarListingParameters
                 {
-                    EndYear = 2018,  
-                    StartYear = 2018,
-                    MakeCodeList = "CHEV",
-                    ModelCodeList = "TRAVERSE",
-                    NumRecords = 100,
-                    SortBy = "Relevance",
-                    StringRadius = 100,
-                    ZipCode = 75098
+                    endYear = 2018,  
+                    startYear = 2018,
+                    makeCodeList = "CHEV",
+                    modelCodeList = "TRAVERSE",
+                    numRecords = 100,
+                    sortBy = "relevance",
+                    searchRadius = 100,
+                    zip = 75098
                 }
             );
 

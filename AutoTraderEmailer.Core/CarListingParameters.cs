@@ -2,15 +2,15 @@
 {
     public class CarListingParameters
     {
-        public int ZipCode { get; set; }
-        public int StartYear { get; set; }
-        public int EndYear { get; set; }
-        public int NumRecords { get; set; }
-        public string SortBy { get; set; }
+        public int zip { get; set; }
+        public int startYear { get; set; }
+        public int endYear { get; set; }
+        public int numRecords { get; set; }
+        public string sortBy { get; set; }
         // TODO: Change to Enum
-        public string ModelCodeList { get; set; }
+        public string modelCodeList { get; set; }
         // TODO: Change to Enum
-        public string MakeCodeList { get; set; }
-        public int StringRadius { get; set; }
+        public string makeCodeList { get; set; }
+        public int searchRadius { get; set; }
     }
 }

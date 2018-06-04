@@ -33,11 +33,11 @@ namespace AutoTraderEmailer.Core
             var rootObject = JsonConvert.DeserializeObject<JsonObjects.Rootobject>(response.Content);
             var listings = rootObject.listings;
             var listingsByPrice = listings.OrderBy(x => x.derivedPrice);
-
         }
 
         private string BuildUrlFromParameters(CarListingParameters parameters)
         {
+            bool isFirst = true;
             var baseUrl = "https://www.autotrader.com/rest/searchresults/sunset/base";
 
             var builder = new StringBuilder();
@@ -47,7 +47,16 @@ namespace AutoTraderEmailer.Core
 
             foreach (var property in properties)
             {
-                builder.Append("&" + property.Name + "=" + property.GetValue(parameters, null));
+                if (isFirst)
+                {
+                    builder.Append("?" + property.Name + "=" + property.GetValue(parameters, null));
+                    isFirst = false;
+                }
+                else
+                {
+                    builder.Append("&" + property.Name + "=" + property.GetValue(parameters, null));
+                    
+                }
             }
 
             return builder.ToString();
