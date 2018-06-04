@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTraderEmailer.Console", "AutoTraderEmailer.Console\AutoTraderEmailer.Console.csproj", "{E5FEAD77-8A3A-4DAE-AC4C-D978AD4F5B50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoTraderEmailer.Core", "AutoTraderEmailer.Core\AutoTraderEmailer.Core.csproj", "{7F94E8F1-1889-43A4-BBFA-45D517DF1340}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5FEAD77-8A3A-4DAE-AC4C-D978AD4F5B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5FEAD77-8A3A-4DAE-AC4C-D978AD4F5B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5FEAD77-8A3A-4DAE-AC4C-D978AD4F5B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5FEAD77-8A3A-4DAE-AC4C-D978AD4F5B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F94E8F1-1889-43A4-BBFA-45D517DF1340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F94E8F1-1889-43A4-BBFA-45D517DF1340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F94E8F1-1889-43A4-BBFA-45D517DF1340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F94E8F1-1889-43A4-BBFA-45D517DF1340}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60F7F72F-109C-47D9-A608-C3B8BFBA6463}
+	EndGlobalSection
+EndGlobal
