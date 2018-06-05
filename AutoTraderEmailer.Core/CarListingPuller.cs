@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -23,7 +24,7 @@ namespace AutoTraderEmailer.Core
             _client.BaseAddress = new Uri(_url);
         }
 
-        public void GetListings()
+        public List<JsonObjects.Listing> GetListings()
         {
             var client = new RestClient(_url);
             var request = new RestRequest(Method.GET);
@@ -31,8 +32,7 @@ namespace AutoTraderEmailer.Core
             var response = client.Execute(request);
 
             var rootObject = JsonConvert.DeserializeObject<JsonObjects.Rootobject>(response.Content);
-            var listings = rootObject.listings;
-            var listingsByPrice = listings.OrderBy(x => x.derivedPrice);
+            return rootObject.listings.ToList();
         }
 
         private string BuildUrlFromParameters(CarListingParameters parameters)

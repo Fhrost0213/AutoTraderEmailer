@@ -1,13 +1,16 @@
 ﻿using AutoTraderEmailer.Core;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoTraderEmailer.Core.Email;
 
 namespace TraverseSearch
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -24,7 +27,19 @@ namespace TraverseSearch
                 }
             );
 
-            puller.GetListings();
+            var listings = puller.GetListings();
+
+            var fromAddress = ConfigurationManager.AppSettings["fromAddress"];
+            var toAddress = ConfigurationManager.AppSettings["toAddress"];
+
+            // TODO: Properly secure this
+            var credentials = new NetworkCredential(ConfigurationManager.AppSettings["emailCredentialUserName"],
+                ConfigurationManager.AppSettings["emailCredentialPassword"]);
+
+            var email = new EmailBuilder(fromAddress, toAddress, listings).Build();
+
+            var emailSender = new EmailSender();
+            emailSender.SendEmail(email, credentials);
         }
     }
 }

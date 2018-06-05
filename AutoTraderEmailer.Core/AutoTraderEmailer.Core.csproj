@@ -49,6 +49,11 @@
   <ItemGroup>
     <Compile Include="CarListingParameters.cs" />
     <Compile Include="CarListingPuller.cs" />
+    <Compile Include="Email\Email.cs" />
+    <Compile Include="Email\EmailBodyCreator.cs" />
+    <Compile Include="Email\EmailBuilder.cs" />
+    <Compile Include="Email\EmailSender.cs" />
+    <Compile Include="Email\EmailSubjectCreator.cs" />
     <Compile Include="JsonObjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

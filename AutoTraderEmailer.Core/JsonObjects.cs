@@ -1,6 +1,6 @@
 ﻿namespace AutoTraderEmailer.Core
 {
-    class JsonObjects
+    public class JsonObjects
     {
 
         public class Rootobject
