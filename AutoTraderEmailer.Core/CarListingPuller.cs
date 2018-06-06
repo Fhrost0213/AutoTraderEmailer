@@ -14,9 +14,9 @@ namespace AutoTraderEmailer.Core
         private HttpClient _client;
         private string _url;
 
-        public CarListingPuller(CarListingParameters parameters)
+        public CarListingPuller(CarListingCriteria criteria)
         {
-            _url = BuildUrlFromParameters(parameters);
+            _url = BuildUrlFromParameters(criteria);
             //_url =
               //  "https://www.autotrader.com/rest/searchresults/sunset/base?zip=75098&startYear=2018&numRecords=100&sortBy=relevance&firstRecord=0&endYear=2018&modelCodeList=TRAVERSE&makeCodeList=CHEV&searchRadius=100";
 
@@ -35,7 +35,7 @@ namespace AutoTraderEmailer.Core
             return rootObject.listings.ToList();
         }
 
-        private string BuildUrlFromParameters(CarListingParameters parameters)
+        private string BuildUrlFromParameters(CarListingCriteria criteria)
         {
             bool isFirst = true;
             var baseUrl = "https://www.autotrader.com/rest/searchresults/sunset/base";
@@ -43,18 +43,18 @@ namespace AutoTraderEmailer.Core
             var builder = new StringBuilder();
             builder.Append(baseUrl);
 
-            var properties = parameters.GetType().GetProperties();
+            var properties = criteria.GetType().GetProperties();
 
             foreach (var property in properties)
             {
                 if (isFirst)
                 {
-                    builder.Append("?" + property.Name + "=" + property.GetValue(parameters, null));
+                    builder.Append("?" + property.Name + "=" + property.GetValue(criteria, null));
                     isFirst = false;
                 }
                 else
                 {
-                    builder.Append("&" + property.Name + "=" + property.GetValue(parameters, null));
+                    builder.Append("&" + property.Name + "=" + property.GetValue(criteria, null));
                     
                 }
             }

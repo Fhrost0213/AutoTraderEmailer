@@ -5,17 +5,24 @@ namespace AutoTraderEmailer.Core.Email
 {
     public class EmailSender
     {
-        public void SendEmail(Core.Email.Email email, NetworkCredential credentials)
+        public void SendEmail(Email email, NetworkCredential credentials)
         {
-            MailMessage mail = new MailMessage(email.FromAddress, email.ToAddress);
-            SmtpClient client = new SmtpClient();
-            client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Host = "smtp.gmail.com";
-            client.Credentials = credentials;
-            mail.Subject = email.EmailSubject;
-            mail.Body = email.Body;
+            var client = new SmtpClient
+            {
+                Port = email.Port,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Host = email.Host,
+                Credentials = credentials,
+                EnableSsl = true
+            };
+
+            var mail = new MailMessage(email.FromAddress, email.ToAddress)
+            {
+                Subject = email.EmailSubject,
+                Body = email.Body
+            };
+
             client.Send(mail);
         }
     }

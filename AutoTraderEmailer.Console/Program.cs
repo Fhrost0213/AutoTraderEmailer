@@ -14,12 +14,15 @@ namespace TraverseSearch
     {
         static void Main(string[] args)
         {
-            var puller = new CarListingPuller(new CarListingParameters
+            var carModelCode = ConfigurationManager.AppSettings["carModelCode"];
+            var carMakeCode = ConfigurationManager.AppSettings["carMakeCode"];
+
+            var puller = new CarListingPuller(new CarListingCriteria
                 {
                     endYear = 2018,  
                     startYear = 2018,
-                    makeCodeList = "CHEV",
-                    modelCodeList = "TRAVERSE",
+                    makeCodeList = carMakeCode,
+                    modelCodeList = carModelCode,
                     numRecords = 100,
                     sortBy = "relevance",
                     searchRadius = 100,
@@ -33,10 +36,14 @@ namespace TraverseSearch
             var toAddress = ConfigurationManager.AppSettings["toAddress"];
 
             // TODO: Properly secure this
-            var credentials = new NetworkCredential(ConfigurationManager.AppSettings["emailCredentialUserName"],
+            var credentials = new NetworkCredential(
+                ConfigurationManager.AppSettings["emailCredentialUserName"], // This shouldn't include @gmail
                 ConfigurationManager.AppSettings["emailCredentialPassword"]);
 
-            var email = new EmailBuilder(fromAddress, toAddress, listings).Build();
+            var port = Int32.Parse(ConfigurationManager.AppSettings["emailPort"]);
+            var host = ConfigurationManager.AppSettings["emailHost"];
+
+            var email = new EmailBuilder(fromAddress, toAddress, port, host, carModelCode, listings).Build();
 
             var emailSender = new EmailSender();
             emailSender.SendEmail(email, credentials);

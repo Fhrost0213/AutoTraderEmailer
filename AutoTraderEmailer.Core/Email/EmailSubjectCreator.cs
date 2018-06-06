@@ -2,16 +2,18 @@
 {
     public class EmailSubjectCreator
     {
-        private string _lowestPrice;
+        private readonly string _lowestPrice;
+        private readonly string _carModel;
 
-        public EmailSubjectCreator(string lowestPrice)
+        public EmailSubjectCreator(string carModel, string lowestPrice)
         {
             _lowestPrice = lowestPrice;
+            _carModel = carModel;
         }
 
         public string CreateEmailSubject()
         {
-            return "Traverses - Cheapest Is " + _lowestPrice;
+            return _carModel + " - Cheapest Is " + _lowestPrice;
         }
     }
 }

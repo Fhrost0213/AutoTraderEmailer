@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarListingParameters.cs" />
+    <Compile Include="CarListingCriteria.cs" />
     <Compile Include="CarListingPuller.cs" />
     <Compile Include="Email\Email.cs" />
     <Compile Include="Email\EmailBodyCreator.cs" />

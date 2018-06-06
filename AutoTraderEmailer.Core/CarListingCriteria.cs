@@ -1,6 +1,6 @@
 ﻿namespace AutoTraderEmailer.Core
 {
-    public class CarListingParameters
+    public class CarListingCriteria
     {
         public int zip { get; set; }
         public int startYear { get; set; }
