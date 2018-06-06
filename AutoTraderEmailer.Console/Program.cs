@@ -33,7 +33,7 @@ namespace TraverseSearch
             var listings = puller.GetListings();
 
             var fromAddress = ConfigurationManager.AppSettings["fromAddress"];
-            var toAddress = ConfigurationManager.AppSettings["toAddress"];
+            var toAddresses = ConfigurationManager.AppSettings["toAddresses"];
 
             // TODO: Properly secure this
             var credentials = new NetworkCredential(
@@ -43,7 +43,7 @@ namespace TraverseSearch
             var port = Int32.Parse(ConfigurationManager.AppSettings["emailPort"]);
             var host = ConfigurationManager.AppSettings["emailHost"];
 
-            var email = new EmailBuilder(fromAddress, toAddress, port, host, carModelCode, listings).Build();
+            var email = new EmailBuilder(fromAddress, toAddresses, port, host, carModelCode, listings).Build();
 
             var emailSender = new EmailSender();
             emailSender.SendEmail(email, credentials);

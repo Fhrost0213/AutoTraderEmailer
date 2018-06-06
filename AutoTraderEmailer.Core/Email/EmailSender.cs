@@ -17,11 +17,13 @@ namespace AutoTraderEmailer.Core.Email
                 EnableSsl = true
             };
 
-            var mail = new MailMessage(email.FromAddress, email.ToAddress)
+            var mail = new MailMessage
             {
+                From = new MailAddress(email.FromAddress),
                 Subject = email.EmailSubject,
                 Body = email.Body
             };
+            mail.To.Add(email.ToAddresses);
 
             client.Send(mail);
         }
