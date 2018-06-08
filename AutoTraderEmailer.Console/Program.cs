@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using AutoTraderEmailer.Core.Email;
 
 namespace TraverseSearch
@@ -14,8 +15,11 @@ namespace TraverseSearch
     {
         static void Main(string[] args)
         {
+            
             var carModelCode = ConfigurationManager.AppSettings["carModelCode"];
             var carMakeCode = ConfigurationManager.AppSettings["carMakeCode"];
+
+            Console.WriteLine("Pulling car data from AutoTrader.com for " + carMakeCode + " " + carModelCode);
 
             var puller = new CarListingPuller(new CarListingCriteria
                 {
@@ -32,8 +36,12 @@ namespace TraverseSearch
 
             var listings = puller.GetListings();
 
+            Console.WriteLine("The API returned " + listings.Count + " listings.");
+
             var fromAddress = ConfigurationManager.AppSettings["fromAddress"];
             var toAddresses = ConfigurationManager.AppSettings["toAddresses"];
+
+            Console.WriteLine("Emailing the top 10 lowest priced vehicles from " + fromAddress + " to " + toAddresses);
 
             // TODO: Properly secure this
             var credentials = new NetworkCredential(
@@ -47,6 +55,8 @@ namespace TraverseSearch
 
             var emailSender = new EmailSender();
             emailSender.SendEmail(email, credentials);
+
+            Console.WriteLine("Finished.");
         }
     }
 }
