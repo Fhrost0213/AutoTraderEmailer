@@ -22,7 +22,7 @@ namespace AutoTraderEmailer.Core.Email
                 sb.AppendLine("Mileage: " + listing.maxMileage);
                 sb.AppendLine("Condition: " + listing.listingType);
                 sb.AppendLine("Color: " + listing.colorExteriorSimple);
-                sb.AppendLine("Image URL: " + listing.imageURL);
+                sb.AppendLine("Link: " + "http://www.autotrader.com" + listing.vdpSeoUrl);
                 sb.AppendLine("");
             }
 

@@ -7,10 +7,8 @@
         public int endYear { get; set; }
         public int numRecords { get; set; }
         public string sortBy { get; set; }
-        // TODO: Change to Enum
-        public string modelCodeList { get; set; }
-        // TODO: Change to Enum
-        public string makeCodeList { get; set; }
+        public ModelCode modelCodeList { get; set; }
+        public MakeCode makeCodeList { get; set; }
         public int searchRadius { get; set; }
     }
 }

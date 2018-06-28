@@ -55,6 +55,8 @@
     <Compile Include="Email\EmailSender.cs" />
     <Compile Include="Email\EmailSubjectCreator.cs" />
     <Compile Include="JsonObjects.cs" />
+    <Compile Include="MakeCodes.cs" />
+    <Compile Include="ModelCodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,15 +18,17 @@ namespace TraverseSearch
             
             var carModelCode = ConfigurationManager.AppSettings["carModelCode"];
             var carMakeCode = ConfigurationManager.AppSettings["carMakeCode"];
+            var startYear = ConfigurationManager.AppSettings["startYear"];
+            var endYear = ConfigurationManager.AppSettings["endYear"];
 
             Console.WriteLine("Pulling car data from AutoTrader.com for " + carMakeCode + " " + carModelCode);
 
             var puller = new CarListingPuller(new CarListingCriteria
                 {
-                    endYear = 2018,  
-                    startYear = 2018,
-                    makeCodeList = carMakeCode,
-                    modelCodeList = carModelCode,
+                    endYear = int.Parse(endYear),  
+                    startYear = int.Parse(startYear),
+                    makeCodeList = (MakeCode)Enum.Parse(typeof(MakeCode), carMakeCode),
+                    modelCodeList = (ModelCode)Enum.Parse(typeof(ModelCode), carModelCode),
                     numRecords = 100,
                     sortBy = "relevance",
                     searchRadius = 100,
