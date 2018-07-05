@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CarListingCriteriaCollection>
+	<CarListingCriterias>
+		<CarListingCriteria>
+			<MakeCode>NISSAN</MakeCode>
+			<ModelCode>PATH</ModelCode>
+			<ZipCode>75098</ZipCode>
+			<StartYear>2015</StartYear>
+			<EndYear>2018</EndYear>
+			<NumberOfRecords>100</NumberOfRecords>
+			<SortBy>relevance</SortBy>
+			<SearchRadius>100</SearchRadius>
+		</CarListingCriteria>
+		<CarListingCriteria>
+			<MakeCode>NISSAN</MakeCode>
+			<ModelCode>PATH</ModelCode>
+			<ZipCode>75098</ZipCode>
+			<StartYear>2015</StartYear>
+			<EndYear>2018</EndYear>
+			<NumberOfRecords>100</NumberOfRecords>
+			<SortBy>relevance</SortBy>
+			<SearchRadius>100</SearchRadius>
+		</CarListingCriteria>
+	</CarListingCriterias>
+</CarListingCriteriaCollection>

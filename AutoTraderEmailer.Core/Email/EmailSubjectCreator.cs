@@ -3,9 +3,9 @@
     public class EmailSubjectCreator
     {
         private readonly string _lowestPrice;
-        private readonly string _carModel;
+        private readonly ModelCode _carModel;
 
-        public EmailSubjectCreator(string carModel, string lowestPrice)
+        public EmailSubjectCreator(ModelCode carModel, string lowestPrice)
         {
             _lowestPrice = lowestPrice;
             _carModel = carModel;
@@ -13,7 +13,7 @@
 
         public string CreateEmailSubject()
         {
-            return _carModel + " - Cheapest Is " + _lowestPrice;
+            return _carModel.ToString() + " - Cheapest Is " + _lowestPrice;
         }
     }
 }

@@ -5,14 +5,14 @@ namespace AutoTraderEmailer.Core.Email
 {
     public class EmailBuilder
     {
-        private readonly string _carModel;
+        private readonly ModelCode _carModel;
         private readonly string _fromAddress;
         private readonly string _toAddresses;
         private readonly int _port;
         private readonly string _host;
         private readonly List<JsonObjects.Listing> _listings;
 
-        public EmailBuilder(string fromAddress, string toAddresses, int port, string host, string carModel, List<JsonObjects.Listing> listings)
+        public EmailBuilder(string fromAddress, string toAddresses, int port, string host, ModelCode carModel, List<JsonObjects.Listing> listings)
         {
             _fromAddress = fromAddress;
             _toAddresses = toAddresses;
