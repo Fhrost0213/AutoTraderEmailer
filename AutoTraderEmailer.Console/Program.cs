@@ -34,23 +34,10 @@ namespace TraverseSearch
             {
                 var carMakeCode = criteria.makeCodeList;
                 var carModelCode = criteria.modelCodeList;
-                var startYear = criteria.startYear;
-                var endYear = criteria.endYear;
-
+ 
                 Console.WriteLine("Pulling car data from AutoTrader.com for " + carMakeCode + " " + carModelCode);
 
-                var puller = new CarListingPuller(new CarListingCriteria
-                    {
-                        endYear = endYear,
-                        startYear = startYear,
-                        makeCodeList = carMakeCode,
-                        modelCodeList = carModelCode,
-                        numRecords = 100,
-                        sortBy = "relevance",
-                        searchRadius = 100,
-                        zip = 75098
-                    }
-                );
+                var puller = new CarListingPuller(criteria);
 
                 var listings = puller.GetListings();
 
