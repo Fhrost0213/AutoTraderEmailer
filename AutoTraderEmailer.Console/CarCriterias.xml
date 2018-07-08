@@ -10,6 +10,8 @@
 			<NumberOfRecords>100</NumberOfRecords>
 			<SortBy>relevance</SortBy>
 			<SearchRadius>100</SearchRadius>
+			<MaxMileage>45000</MaxMileage>
+			<TrimCode>S</TrimCode>
 		</CarListingCriteria>
 		<CarListingCriteria>
 			<MakeCode>NISSAN</MakeCode>
@@ -20,6 +22,43 @@
 			<NumberOfRecords>100</NumberOfRecords>
 			<SortBy>relevance</SortBy>
 			<SearchRadius>100</SearchRadius>
+			<MaxMileage>45000</MaxMileage>
+			<TrimCode>SV</TrimCode>
 		</CarListingCriteria>
+		<CarListingCriteria>
+			<MakeCode>NISSAN</MakeCode>
+			<ModelCode>PATH</ModelCode>
+			<ZipCode>75098</ZipCode>
+			<StartYear>2015</StartYear>
+			<EndYear>2018</EndYear>
+			<NumberOfRecords>100</NumberOfRecords>
+			<SortBy>relevance</SortBy>
+			<SearchRadius>100</SearchRadius>
+			<MaxMileage>45000</MaxMileage>
+			<TrimCode>SL</TrimCode>
+		</CarListingCriteria>
+		<CarListingCriteria>
+			<MakeCode>NISSAN</MakeCode>
+			<ModelCode>PATH</ModelCode>
+			<ZipCode>75098</ZipCode>
+			<StartYear>2015</StartYear>
+			<EndYear>2018</EndYear>
+			<NumberOfRecords>100</NumberOfRecords>
+			<SortBy>relevance</SortBy>
+			<SearchRadius>100</SearchRadius>
+			<MaxMileage>45000</MaxMileage>
+			<TrimCode>Platinum</TrimCode>
+		</CarListingCriteria>
+		<!--<CarListingCriteria>
+			<MakeCode>CHEV</MakeCode>
+			<ModelCode>TRAVERSE</ModelCode>
+			<ZipCode>75098</ZipCode>
+			<StartYear>2018</StartYear>
+			<EndYear>2018</EndYear>
+			<NumberOfRecords>100</NumberOfRecords>
+			<SortBy>relevance</SortBy>
+			<SearchRadius>100</SearchRadius>
+			<MaxMileage>15000</MaxMileage>
+		</CarListingCriteria>-->
 	</CarListingCriterias>
 </CarListingCriteriaCollection>

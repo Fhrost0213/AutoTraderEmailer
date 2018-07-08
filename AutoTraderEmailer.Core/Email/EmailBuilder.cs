@@ -11,15 +11,19 @@ namespace AutoTraderEmailer.Core.Email
         private readonly int _port;
         private readonly string _host;
         private readonly List<JsonObjects.Listing> _listings;
+        private MakeCode _carMake;
+        private string _carTrim;
 
-        public EmailBuilder(string fromAddress, string toAddresses, int port, string host, ModelCode carModel, List<JsonObjects.Listing> listings)
+        public EmailBuilder(string fromAddress, string toAddresses, int port, string host, MakeCode carMake, ModelCode carModel, string carTrim, List<JsonObjects.Listing> listings)
         {
             _fromAddress = fromAddress;
             _toAddresses = toAddresses;
             _listings = listings;
             _port = port;
             _host = host;
+            _carMake = carMake;
             _carModel = carModel;
+            _carTrim = carTrim;
         }
 
         public Email Build()
@@ -30,7 +34,7 @@ namespace AutoTraderEmailer.Core.Email
             {
                 ToAddresses = _toAddresses,
                 FromAddress = _fromAddress,
-                EmailSubject = new EmailSubjectCreator(_carModel, lowestPrice).CreateEmailSubject(),
+                EmailSubject = new EmailSubjectCreator(_carMake, _carModel, _carTrim, lowestPrice).CreateEmailSubject(),
                 Port = _port,
                 Host = _host
             };

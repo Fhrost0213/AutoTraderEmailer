@@ -23,7 +23,7 @@ namespace TraverseSearch
                 ConfigurationManager.AppSettings["emailCredentialUserName"], // This shouldn't include @gmail
                 ConfigurationManager.AppSettings["emailCredentialPassword"]);
 
-            var port = Int32.Parse(ConfigurationManager.AppSettings["emailPort"]);
+            var port = int.Parse(ConfigurationManager.AppSettings["emailPort"]);
             var host = ConfigurationManager.AppSettings["emailHost"];
 
             var criteriasPath = ConfigurationManager.AppSettings["carCriteriasFilePath"];
@@ -34,6 +34,7 @@ namespace TraverseSearch
             {
                 var carMakeCode = criteria.makeCodeList;
                 var carModelCode = criteria.modelCodeList;
+                var carTrim = criteria.trimCodeList;
  
                 Console.WriteLine("Pulling car data from AutoTrader.com for " + carMakeCode + " " + carModelCode);
 
@@ -45,7 +46,7 @@ namespace TraverseSearch
 
                 Console.WriteLine("Emailing the top 10 lowest priced vehicles from " + fromAddress + " to " + toAddresses);
 
-                var email = new EmailBuilder(fromAddress, toAddresses, port, host, carModelCode, listings).Build();
+                var email = new EmailBuilder(fromAddress, toAddresses, port, host, carMakeCode, carModelCode, carTrim, listings).Build();
 
                 var emailSender = new EmailSender();
                 emailSender.SendEmail(email, credentials);

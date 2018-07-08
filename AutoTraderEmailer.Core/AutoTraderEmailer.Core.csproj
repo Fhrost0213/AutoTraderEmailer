@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarListingCriteriaCollection.cs" />
+    <Compile Include="EnumExtensions.cs" />
     <Compile Include="XmlSerializer.cs" />
     <Compile Include="CarListingCriteria.cs" />
     <Compile Include="CarListingPuller.cs" />

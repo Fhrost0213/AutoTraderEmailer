@@ -54,6 +54,15 @@ namespace AutoTraderEmailer.Core
                 }
                 else
                 {
+                    if (property.Name == "trimCodeList")
+                    {
+                        // TODO: Don't understand why this appends this in front of trim, need to see if there's a cleaner way to call this API
+                        builder.Append("&" + property.Name + "=" + criteria.modelCodeList + "%7C" + property.GetValue(criteria, null));
+                    }
+                    else
+                    {
+                        
+                    }
                     builder.Append("&" + property.Name + "=" + property.GetValue(criteria, null));
                     
                 }

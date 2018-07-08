@@ -22,5 +22,9 @@ namespace AutoTraderEmailer.Core
         public MakeCode makeCodeList { get; set; }
         [XmlElement(ElementName = "SearchRadius")]
         public int searchRadius { get; set; }
+        [XmlElement(ElementName = "MaxMileage")]
+        public int maxMileage { get; set; }
+        [XmlElement(ElementName = "TrimCode")]
+        public string trimCodeList { get; set; }
     }
 }
