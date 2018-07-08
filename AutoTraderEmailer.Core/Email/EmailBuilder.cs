@@ -28,7 +28,11 @@ namespace AutoTraderEmailer.Core.Email
 
         public Email Build()
         {
-            var lowestPrice = _listings.OrderBy(l => l.derivedPrice).First().derivedPrice;
+            var lowestPrice = _listings
+                .Where(l => l.derivedPrice != null)
+                .OrderBy(l => l.derivedPrice)
+                .First()
+                .derivedPrice;
 
             var email = new Email
             {
